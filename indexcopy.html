@@ -13,92 +13,43 @@
     <link rel="stylesheet" href="node_modules/font-awesome/css/font-awesome.min.css" />
     <link rel="stylesheet" href="node_modules/bootstrap-social/bootstrap-social.css" />
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lobster|Open+Sans" />
-    <link rel="stylesheet" href="css/styles.css" />
+    <!--<link rel="stylesheet" href="css/styles.css" />-->
     <title>NuCamp: A Better Way To Camp</title>
+
+    <style>
+        .carousel-item {
+            height: 100vh;
+            min-height: 350px;
+            background: no-repeat center center scroll;
+            -webkit-background-size: cover;
+            -moz-background-size: cover;
+            -o-background-size: cover;
+            background-size: cover;
+        }
+
+        .carousel-caption {
+            background-color: rgba(0, 0, 0, 0.5);
+        }
+
+        .navbar {
+            background-color: rgba(0, 0, 0, 0.5);
+
+        }
+    </style>
+
 </head>
 
 <body>
+    
 
-    <header class="jumbotron jumbotron-fluid">
+    <nav class="navbar navbar-expand-lg navbar-dark fixed-top">
         <div class="container">
-            <div class="row">
-                <div class="col-4 col-sm-3 col-md-2 align-self-center">
-                    <img src="img/logo.png" class="img-fluid" />
-                </div>
-                <div class="col">
-                    <h1>NuCamp</h1>
-                    <h2>a better way to camp</h2>
-                </div>
-                <div class="col-md-4 col-xl-2 mt-4">
-                    <a role="button" class="btn btn-lg btn-info" data-toggle="modal" data-target="#reserveModal">Reserve Campsite</a>
-                </div> 
-            </div>
-        </div>
-    </header>
-
-    <div id="reserveModal" class="modal fade" role="dialog">
-        <div class="modal-dialog modal-lg" role="document">
-            <div class="modal-content">
-                <div class="modal-header bg-info text-white">
-                    <h3 class="modal-title">Reserve a Campsite</h3>
-                    <button type="button" class="close" data-dismiss="modal">&times;</button>
-                </div>
-                <div class="modal-body">
-                    <div class="container-fluid">
-                        <form id="reserveForm">
-                            <div class="form-group row">
-                                <label for="numCampers" class="col-sm-6 col-form-label">Number of Campers</label>
-                                <div class="col">
-                                    <select name="numCampers" id="numCampers" class="form-control">
-                                        <option selected>Select...</option>
-                                        <option value="one">1</option>
-                                        <option value="two">2</option>
-                                        <option value="three">3</option>
-                                        <option value="four">4</option>
-                                        <option value="five">5</option>
-                                        <option value="six">6</option>
-                                    </select>
-                                </div>
-                            </div>
-                            <div class="form-group row">
-                                <label for="date" class="col-sm-6 col-form-label">Date</label>
-                                <div class="col-sm-6">
-                                    <input class="form-control" type="date" id="date" name="date">
-                                </div>
-                            </div>
-                            <div class="form-group row">
-                                <label for="type" class="col-sm-6 col-form-label">Campsite Type</label>
-                                <div class="col btn-group btn-group-toggle" data-toggle="buttons">
-                                    <label class="btn btn-success">
-                                        <input type="radio" name="siteType" id="siteTent" autocomplete="off">Tent
-                                    </label>
-                                    <label class="btn btn-primary">
-                                        <input type="radio" name="siteType" id="siteRV" autocomplete="off">RV
-                                    </label>
-                                </div>
-                            </div>
-                            <div class="form-group row">
-                                <div class="col">
-                                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
-                                    <button type="submit" class="btn btn-primary">Search</button>
-                                </div>
-                            </div>
-                        </form>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <nav class="navbar navbar-expand-sm navbar-dark sticky-top">
-        <div class="container">
-            <a class="navbar-brand" href="#"><img src="img/logo.png" height="30" width="30"></a>
-            <button class="navbar-toggler" type="button"
-            data-toggle="collapse" data-target="#nucampNavbar">
+            <a class="navbar-brand" href="#"><img src="img/logo.png" height="60" width="60">NuCamp</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#nucampNavbar" aria-controls="nucampNavbar" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
-            <div class="collapse navbar-collapse" id="nucampNavbar">
-                <ul class="navbar-nav">
+        <div class="collapse navbar-collapse" id="nucampNavbar">
+                <ul class="navbar-nav ml-auto">
                     <li class="nav-item active"><a class="nav-link" href="#"><i class="fa fa-home fa-lg"> </i> Home </a></li>
                     <li class="nav-item"><a class="nav-link" href="aboutus.html"><i class="fa fa-info fa-lg"></i> About </a></li>
                     <li class="nav-item"><a class="nav-link" href="#"><i class="fa fa-list fa-lg"></i> Sites</a></li>
@@ -150,7 +101,69 @@
         </div>
     </div>
 
-    <div class="container">
+    <header>
+        <div id="carouselPics" class="carousel slide" data-ride="carousel">
+            <ol class="carousel-indicators">
+                <li data-target="carouselPics" data-slide-to="0" class="active"></li>
+                <li data-target="carouselPics" data-slide-to="1"></li>
+                <li data-target="carouselPics" data-slide-to="2"></li>
+            </ol>
+        <div class="carousel-inner" role="listbox">
+            <div class="carousel-item active" style="background-image: url('img/breadcrumb-trail.jpg');">
+                <div class="carousel-caption d-none d-md-block">
+                    <h2 class="display-4">Discover &amp; Review</h2>
+                    <p class="lead">Explore our growing database of curated campsites and leave your own reviews!</p>
+                </div>
+            </div>
+            <div class="carousel-item" style="background-image: url('img/react-lake.jpg');">
+                <div class="carousel-caption d-none d-md-block">
+                    <h2 class="display-4">Featured Campsites</h2>
+                    <p class="lead">Nestled in the foothills of the Chrome Mountains, this campground on the shores of the pristine React Lake is a favorite for fly fishers.</p>
+                </div>
+            </div>
+            <div class="carousel-item" style="background-image: url('img/chrome-river.jpg');">
+                <div class="carousel-caption d-none d-md-block">
+                    <h2 class="display-4">Community Partners</h2>
+                    <p class="lead">Bootstrap Outfitters supplies you with gear you need at prices you can't beat.</p>
+                </div>
+            </div>
+        </div>
+        <a class="carousel-control-prev" href="#carouselPics" role="button" data-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="sr-only">Previous</span>
+        </a>
+        <a class="carousel-control-next" href="#carouselPics" role="button" data-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="sr-only">Next</span>
+        </a>
+        </div>
+    </header>
+
+
+
+
+
+
+
+     <!--   <div class="container">
+            <div class="row">
+                <div class="col-4 col-sm-3 col-md-2 align-self-center">
+                    <img src="img/logo.png" class="img-fluid" />
+                </div>
+                <div class="col">
+                    <h1>NuCamp</h1>
+                    <h2>a better way to camp</h2>
+                </div>
+                <div class="col-md-4 col-xl-2 mt-4">
+                    <a href="#reserveForm" role="button" class="btn btn-lg btn-info" data-toggle="tooltip" data-placement="bottom" data-html="true" title="Or call us at </br><strong>1-206-555-1234</strong>">Reserve Campsite</a>
+                </div> 
+            </div>
+        </div>
+    </header> -->
+
+     
+
+    <!--<div class="container">
 
         <div class="row row-content">
             <div class="col-md-8 mx-auto">
@@ -238,9 +251,45 @@
                 </div>      
             </div>
         </div>
-    </div>
+        <div class="row row-content align-items-center">
+            <div class="col-sm-11 col-md-8 col-lg-6 mx-auto"> --><!--I just used these dividers to keep the columns taking up half the card for small and above while keeping all of the mm/dd/yyyy placeholder text in place and keeping the card as narrow as possible for each viewport.  Otherwise, per instructions, would just be col-sm-6 -->
+                <div class="card">
+                    <h3 class="card-header bg-info text-white">Reserve a Campsite</h3>
+                    <div class="card-body">
+                        <form id="reserveForm">
+                            <div class="form-group row">
+                                <label for="numCampers" class="col-sm-6 col-form-label">Number of Campers</label>
+                                <div class="col">
+                                    <select name="numCampers" id="numCampers" class="form-control">
+                                        <option selected>Select...</option>
+                                        <option value="one">1</option>
+                                        <option value="two">2</option>
+                                        <option value="three">3</option>
+                                        <option value="four">4</option>
+                                        <option value="five">5</option>
+                                        <option value="six">6</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="form-group row">
+                                <label for="date" class="col-sm-6 col-form-label">Date</label>
+                                <div class="col-sm-6">
+                                    <input class="form-control" type="date" id="date" name="date">
+                                </div>
+                            </div>
+                            <div class="form-group row">
+                                <div class="col">
+                                    <button type="submit" class="btn btn-primary">Search</button>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+ <!--           </div>
+        </div>
+    </div> -->
 
-    <footer class="site-footer">
+    <footer class="site-footer" style="background-color: #5bc0de">
         <div class="container">
             <div class="row">
                 <div class="col-4 col-sm-2 offset-1">
@@ -271,6 +320,12 @@
     <script src="node_modules/jquery/dist/jquery.slim.min.js"></script>
     <script src="node_modules/popper.js/dist/umd/popper.min.js"></script>
     <script src="node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
+
+    <script>
+        $(function () {
+            $('[data-toggle="tooltip"]').tooltip()
+        })
+    </script>
 
 </body>
 
